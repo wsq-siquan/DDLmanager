@@ -1,0 +1,39 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import javax.net.ssl.SSLContext;
+import javax.swing.text.AbstractDocument.BranchElement;
+
+
+public class TCS {
+	public static void main(String[] args) throws IOException {
+		ServerSocket ss = new ServerSocket(9870);
+		
+		Socket s = ss.accept();
+		new Thread(new TG(s)).start();
+		
+	}
+}
+ class TG extends Thread {
+	 Socket s = null;
+	 BufferedReader br;
+	public TG(Socket s) throws IOException {
+		// TODO Auto-generated constructor stub
+		this.s = s;
+		br = new BufferedReader(new InputStreamReader(s.getInputStream()));		
+	}
+	public void run() {
+		try {
+			String get= null;
+			while(true) {
+				get = br.readLine();
+				System.out.println("get from client :" + get);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

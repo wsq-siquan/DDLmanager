@@ -1,0 +1,38 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+public class S3 {
+	public static int port = 3333;
+	public static String ip = "127.0.0.1";
+	
+	public static void main(String[] args) throws IOException {
+		//①启动服务器
+		ServerSocket server = new ServerSocket(port);
+		System.out.println("server running...");
+		//②监听Socket
+		Socket socket = server.accept();
+		//③IO流
+		BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
+		
+		String client = null;
+		//如果接收到客户端的exit信号则关闭Socket
+		while(!"exit".equalsIgnoreCase(client = br.readLine())){
+			System.out.println("from client say:"+client);
+			pw.println("server get your info :" +client);
+			pw.flush();
+		}
+				
+		br.close();
+		pw.close();
+		
+		socket.close();
+		server.close();
+	}
+}

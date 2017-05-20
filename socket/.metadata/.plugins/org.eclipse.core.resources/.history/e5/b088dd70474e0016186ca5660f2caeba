@@ -1,0 +1,46 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
+
+import javax.swing.text.MaskFormatter;
+
+public class CS {
+	public static void main(String[] args) throws IOException {
+		//先建立一个server socket
+		ServerSocket ss = new ServerSocket(10987);
+		System.out.println("server running");
+		
+		//再建立一个socket
+		Socket s = ss.accept();
+		//这是得到客户端传来的消息的reader
+		BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
+		//这是从服务端写出去信息的writer
+		PrintWriter pw = new PrintWriter(new OutputStreamWriter(s.getOutputStream()));
+		
+		//将socket赋予accept，会阻塞，直到客户端连接上
+		//s = ss.accept();
+		String msg = null;
+		String send = null;
+		
+		while(true) {
+			msg = br.readLine();
+			System.out.println("from c :" + msg);
+			System.out.println("i say :");
+			Scanner sc = new Scanner(System.in);
+			send = sc.nextLine();
+			pw.println(send);
+			pw.flush();
+			if(msg == "exit") break;
+		}
+		s.close();
+		ss.close();
+		
+	}
+}

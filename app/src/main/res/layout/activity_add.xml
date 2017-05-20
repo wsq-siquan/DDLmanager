@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ddlmanager.add"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:background="@color/themeRed"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&lt;"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            android:textColor="@color/ssYellow"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/add_back" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon2"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imageView2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="45dp"
+            android:textStyle="bold"
+            android:textColor="#f58f77"
+            android:background="@mipmap/delete"
+            android:layout_alignBottom="@+id/add_back"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:id="@+id/new.delete" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@color/softYellow"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/textStyle"
+            android:layout_marginLeft="20dp"
+            android:text="Todo Name :"
+            android:textColor="@color/warmBrown"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_add"
+            android:hint="@string/detail"
+            android:background="@drawable/bg_edittext"
+            style="@style/addEditMargin"
+            android:padding="6dp"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:background="@color/softGreen">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/addLayoutItemStyle"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+            <TextView
+                style="@style/textStyle"
+                android:text="Start Time :"
+                android:textColor="@color/ssGreen"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/std_add"
+                android:hint="@string/start_date"
+                android:padding="6dp"
+                android:background="@drawable/edittext_focused"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/addLayoutItemStyle"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+            <TextView
+                style="@style/textStyle"
+                android:text="End Time :"
+                android:textColor="@color/ssGreen"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edd_add"
+                android:hint="@string/end_date"
+                android:background="@drawable/edittext_focused"
+                android:padding="6dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <Button
+            style="@style/addLayoutItemStyle"
+            android:layout_height="match_parent"
+            android:text="@string/add"
+            android:id="@+id/add_to_db"
+            android:background="@drawable/button_dfile_add"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/ssYellow"/>
+
+        <Button
+            style="@style/addLayoutItemStyle"
+            android:background="@drawable/button_dfile_add2"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/warmBrown"
+            android:layout_height="match_parent"
+            android:text="clear"
+            android:id="@+id/delete_b"/>
+    </LinearLayout>
+
+</LinearLayout>

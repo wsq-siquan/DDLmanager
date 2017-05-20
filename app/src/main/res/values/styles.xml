@@ -1,0 +1,47 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/brown</item>
+        <item name="colorPrimaryDark">@color/themeRed</item>
+        <item name="colorAccent">@color/themeRed</item>
+        <item name="colorControlNormal">@color/brown</item>
+        <item name="colorControlActivated">@color/themeRed</item>
+    </style>
+
+    <style name="fontStyleOfItem">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="fontStyleOfItem2">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="addLayoutItemStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="addEditMargin">
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+    <style name="textStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
